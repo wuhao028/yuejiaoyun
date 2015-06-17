@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/searchL1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/hend"
+        android:gravity="center_vertical" >
+
+        <ImageButton
+            android:id="@+id/search_voiceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_back_imgbtn_click"
+            android:scaleType="fitCenter"
+            android:src="@drawable/blank" />
+
+        <LinearLayout
+            android:id="@+id/searchL2"
+            android:layout_width="0.0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0" >
+
+            <EditText
+                android:id="@+id/search_Keywords"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.59"
+                android:background="@drawable/edittext"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:imeOptions="actionDone"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:paddingLeft="3dip"
+                android:singleLine="true" />
+        </LinearLayout>
+
+      <Button
+          android:id="@+id/voicesearch"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_marginRight="5dp"
+          android:background="@drawable/voicesearch" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="搜索" />
+    
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/itemcolcor"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+
+        
+        <KeywordsView.KeywordsView
+            android:id="@+id/word"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="2dip" />
+    </LinearLayout>
+
+</LinearLayout>

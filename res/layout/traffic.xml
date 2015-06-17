@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    <TextView
+        
+        android:layout_width="fill_parent"
+        android:layout_height="25dip"
+        android:background="@drawable/fenlan"
+        android:textSize="20dip"
+        android:text="下载"/>
+    
+    
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text="下载速度："/>
+    
+    <TextView
+        android:id="@+id/real_rece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text=""/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text="启动接收总流量："/>
+    
+    <TextView
+        android:id="@+id/total_rece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text=""/>
+    
+    
+      <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="25dip"
+        android:background="@drawable/fenlan"
+        android:textSize="20dip"
+        android:layout_marginTop="30dip"
+        android:text="发送"/>
+    
+    
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text="发送速度："/>
+    
+    <TextView
+        android:id="@+id/real_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text=""/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text="本次启动发送总流量："/>
+    
+    <TextView
+        android:id="@+id/total_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:text=""/>
+    
+    
+    
+
+    
+
+</LinearLayout>

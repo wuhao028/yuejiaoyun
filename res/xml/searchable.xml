@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 该 res/xml/searchable.xml 用于配置 SearchView 的使用
+ android:label 必选。它应该和你的程序的名字一样。只有android:includeInGlobalSearch为"true"时，它才多用户可见。它就是在search settings的searchable列表中所用的名字。
+ android:searchSuggestAuthority：它必须和你的content provider的mainfest中的android:authorities相匹配。
+ android:searchSuggestThreshold：表示用户至少需要输入了多少个字符才显示suggestion列表。那么在用户输入的字符数小于该值的时候，显示的就是shortcut.SearchableDictionary例子就是这样的。
+ 比如 android:searchSuggestAuthority="com.example.android.searchabledict.DictionaryProvider"
+ -->
+<!-- 配置搜索建议，配置错误将不会显示，这里的searchSuggestAuthority的值必须是
+继承自SearchRecentSuggestionsProvider的provider类的完整路径名 -->
+
+<!-- android:searchSuggestSelection的值必须是空格加问号（" ?"），
+这只是一个SQLite查询参数的占位符（将自动替换为用户录入的搜索请求文本）。 -->
+
+<!-- android:searchSuggestIntentAction指定 当提供建议选项的时候，发送当前query字符串的IntentAction，通常为VIEW -->
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+        android:label="@string/search_label"
+        android:hint="@string/search_hint"
+        android:searchSettingsDescription="@string/settings_description"
+		
+		android:searchSuggestAuthority="com.example.contentprovider.CustomSuggestionsProvider"
+		android:searchSuggestIntentAction="android.intent.action.VIEW"
+       	android:searchSuggestSelection=" ?"
+        >
+ </searchable>
+ <!-- 
+ 		已经实现 recentSuggestion功能，需要在上面的属性修改为android:searchSuggestAuthority="com.example.contentprovider.RecentSuggestionsProvider"
+        android:searchSuggestAuthority=""
+        android:searchSuggestIntentAction="android.intent.action.VIEW"
+        android:searchSuggestIntentData="content://com.example.android.searchabledict.DictionaryProvider/dictionary"
+        android:searchSuggestSelection=" ?"
+        android:searchSuggestThreshold="1"
+        android:includeInGlobalSearch="true"
+         -->

@@ -1,0 +1,134 @@
+# view res/layout/searchpage.xml #generated:71
+-keep class KeywordsView.KeywordsView { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:2
+# view res/layout/guide.xml #generated:7
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:66
+-keep class com.example.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:212
+-keep class com.example.activity.PlayHistoryActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:252
+-keep class com.example.activity.PlayLikesActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:227
+# view res/layout/searchresult.xml #generated:14
+-keep class com.example.activity.RefreshableView { <init>(...); }
+
+# view AndroidManifest.xml #generated:179
+-keep class com.example.activity.SearchableActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:238
+-keep class com.example.activity.SettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:165
+-keep class com.example.activity.ShowVodsInSelectedPpList { <init>(...); }
+
+# view AndroidManifest.xml #generated:168
+-keep class com.example.activity.VideoPlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:233
+-keep class com.example.activity.VideoPlayer { <init>(...); }
+
+# view AndroidManifest.xml #generated:61
+-keep class com.example.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:224
+-keep class com.example.activity.getsearchresult { <init>(...); }
+
+# view AndroidManifest.xml #generated:218
+-keep class com.example.activity.search { <init>(...); }
+
+# view AndroidManifest.xml #generated:235
+-keep class com.example.activity.webpageloader { <init>(...); }
+
+# view AndroidManifest.xml #generated:203
+-keep class com.example.contentprovider.CustomSuggestionsProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:199
+-keep class com.example.contentprovider.RecentSuggestionsProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:241
+-keep class com.example.guide.GuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:47
+-keep class com.example.guide.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:255
+-keep class com.example.model.PlayLikesItem { <init>(...); }
+
+# view AndroidManifest.xml #generated:159
+-keep class com.example.service.LoadPpListService { <init>(...); }
+
+# view AndroidManifest.xml #generated:258
+-keep class com.example.utils.PlayLikesItemAdapter { <init>(...); }
+
+# view AndroidManifest.xml #generated:221
+-keep class com.example.yuejiaoyun.KeywordsView { <init>(...); }
+
+# view AndroidManifest.xml #generated:230
+-keep class com.example.yuejiaoyun.xml.VideoListContentHandle { <init>(...); }
+
+# view AndroidManifest.xml #generated:149
+-keep class com.igexin.download.DownloadProvider { <init>(...); }
+
+# view AndroidManifest.xml #generated:143
+-keep class com.igexin.download.DownloadReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:141
+-keep class com.igexin.download.DownloadService { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.igexin.getuiext.activity.GetuiExtActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:137
+-keep class com.igexin.getuiext.service.GetuiExtService { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.igexin.getuiext.service.PayloadReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:110
+-keep class com.igexin.sdk.PushActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:104
+# view AndroidManifest.xml #generated:96
+-keep class com.igexin.sdk.PushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.igexin.sdk.PushService { <init>(...); }
+
+# view AndroidManifest.xml #generated:172
+-keep class io.vov.vitamio.activity.InitActivity { <init>(...); }
+
+# view res/layout/activity_videoplay.xml #generated:81
+-keep class io.vov.vitamio.widget.CenterLayout { <init>(...); }
+
+# view res/layout/activity_videoplay.xml #generated:87
+# view res/layout/videoview.xml #generated:7
+-keep class io.vov.vitamio.widget.VideoView { <init>(...); }
+
+# view AndroidManifest.xml #generated:265
+# view AndroidManifest.xml #generated:270
+-keep class setting.MonitorService { <init>(...); }
+
+# view res/layout/setting.xml #generated:42
+-keep class setting.ReportOval { <init>(...); }
+
+# view AndroidManifest.xml #generated:267
+-keep class setting.about { <init>(...); }
+
+# view AndroidManifest.xml #generated:261
+-keep class setting.setting { <init>(...); }
+
+# view AndroidManifest.xml #generated:263
+-keep class setting.trafficstats { <init>(...); }
+
+# view AndroidManifest.xml #generated:247
+-keep class splashadapter.ViewPagerAdapter { <init>(...); }
+
+# view AndroidManifest.xml #generated:249
+-keep class voicesearch.MyStt1Activity { <init>(...); }
+

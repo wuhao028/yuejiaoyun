@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 用于MainActivity中显示菜单项 -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<!--
+    showAsAction 属性，指 当Menu中空余位置不够时，该Item显示的属性 (是始终显示还是ifROOM收缩起来)
+    orderInCategory：actionbar里每个item的优先级，值越大优先级越低，actionbar地方不够就会放到overflow中
+    	com.example.activity.SearchViewActivity
+    	android:icon="@drawable/abc_ic_search"
+    	android:actionViewClass="android.widget.SearchView"-->
+    <item
+        android:id="@+id/menu_search_view"
+        android:title="@string/menu_search"
+        android:orderInCategory="100"
+		android:showAsAction="always"
+		
+		android:actionViewClass="android.widget.SearchView"
+        />
+    
+    <item android:id="@+id/menu_share"
+        android:title="@string/menu_share"
+        android:icon="@drawable/btn_share"/>
+    <item android:id="@+id/menu_likes"
+            android:title="@string/menu_likes"
+           android:icon="@drawable/menu_play_likes"/>
+    <item android:id="@+id/menu_playHistory"
+        android:title="@string/playHistory"
+        android:icon="@drawable/menu_play_history"/>
+    <item android:id="@+id/menu_setting"
+        android:title="@string/setting"
+        android:icon="@drawable/app_panel_setting_icon"/>
+    <item android:id="@+id/menu_exit"
+        android:title="@string/exit"
+        android:icon="@drawable/menu_exit_btn_normal"/>
+     <item android:id="@+id/menu_search"
+        android:title="@string/search"
+        android:icon="@drawable/abc_ic_search"/>
+     <item android:id="@+id/menu_test"
+            android:title="@string/menu_test"
+           android:icon="@drawable/menu_play_test"/>
+     
+     
+    
+    <!-- <menu
+            android:id="@+id/menu_moreoverflow"
+        	android:title="@string/menu_moreoverflow"
+        	android:orderInCategory="20"> </menu>
+        <group android:id="@+id/menu_moreoverflow"
+        android:menuCategory="container"
+        android:orderInCategory="100">    </group>  
+        	-->
+    	
+</menu>
+
+

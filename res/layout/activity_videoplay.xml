@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <!--  <TextView 
+	 	    android:id="@+id/rootCategory"
+	 	    android:layout_width="wrap_content"
+	 	    android:layout_height="wrap_content"
+	 	    android:text="here is rootCategory"
+	 	    android:textSize="10sp"
+	 	    /> 
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+	   <io.vov.vitamio.widget.CenterLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" 
+	        >
+	    <TextView 
+	 	    android:id="@+id/subCategory"
+	 	    android:layout_width="wrap_content"
+	 	    android:layout_height="wrap_content"
+	 	    android:text="here is subCategory"
+	 	    android:textSize="10sp"
+	 	    />
+	    <io.vov.vitamio.widget.OutlineTextView
+        android:id="@+id/outlineTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ShowVodsInSelectedPpList"  />"
+		</io.vov.vitamio.widget.CenterLayout>
+    </LinearLayout>  -->
+    
+ 	<!-- 经过这三个Text的测试 发现，在播放视频时， CenterLayout将其内容呈现于页面的最顶层，完全遮盖了其他的控件
+ 			故考虑对这两个控件的布局源码做些修改-->
+ 	<!-- VideoView 会把最贴近其的那一层LinearLayout全部挤占 -->
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+	    <LinearLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="30dp"
+	        android:layout_marginBottom="15dp"
+	        android:background="#F5F5F5"
+	        android:orientation="horizontal">
+			<TextView 
+		 	    android:id="@+id/rootCategory"
+		 	    android:layout_width="wrap_content"
+		 	    android:layout_height="wrap_content"
+		 	    android:layout_marginLeft="5dp"
+		 	    android:textSize="17sp"
+		 	    android:text="rootCategory"/>
+			<TextView 
+		 	    android:id="@+id/subCategory"
+		 	    android:layout_width="wrap_content"
+		 	    android:layout_height="wrap_content"
+		 	    android:textSize="17sp"
+		 	    android:text="    subCategory"/>
+		</LinearLayout>
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+	        android:layout_marginBottom="15dp"
+	        android:background="#F5F5F5"
+	        android:orientation="horizontal">
+		    <TextView 
+		 	    android:id="@+id/vod_name"
+		 	    android:layout_width="wrap_content"
+		 	    android:layout_height="wrap_content"
+		 	    android:layout_marginLeft="5dp"
+		 	    android:textSize="20sp"
+		 	    android:text="NAME"/>
+		</LinearLayout>
+		    
+	 	<io.vov.vitamio.widget.CenterLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" 
+	        >
+		<!-- android:layout_marginTop="50dp" -->
+	        <io.vov.vitamio.widget.VideoView
+	            android:id="@+id/videoView"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_centerHorizontal="true"
+	            android:layout_centerVertical="true"/>
+
+	    </io.vov.vitamio.widget.CenterLayout>
+    <!-- VideoView 会把最贴近其的那一层LinearLayout全部挤占 -->
+    
+    <LinearLayout 
+ 	    android:layout_width="fill_parent"
+ 	    android:layout_height="wrap_content"
+ 	    >
+ 	    <TextView 
+	 	    android:id="@+id/vod_content"
+	 	    android:layout_width="wrap_content"
+	 	    android:layout_height="wrap_content"
+	 	    android:textSize="12sp"
+	 	    android:text="here is vod_content"/>
+ </LinearLayout>
+ </LinearLayout>
+    
+<RelativeLayout
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:orientation="vertical" >
+    
+ 
+    
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:numStars="10"
+        android:max="10"
+        android:progress="10"
+        android:stepSize="1"
+        />
+    
+    
+	<Button 
+    android:id="@+id/bt_one"
+    android:layout_width="80dip"
+    android:layout_height="80dip"
+    android:layout_below="@id/ratingBar1"
+    android:layout_alignParentLeft="true"
+    android:background="@drawable/zan"
+    android:layout_centerInParent="true"
+    android:textColor="#000000"/>
+	
+	<TextView
+	    android:id="@+id/vod_up"
+	    android:layout_width="120dip"
+        android:layout_height="80dip"    
+        android:layout_toRightOf="@+id/bt_one"
+        android:layout_alignTop="@id/bt_one"
+        android:textColor="#000000"
+        />"
+	
+	<TextView
+       android:id="@+id/tv_one"
+       android:layout_width="20dip"
+       android:layout_height="20dip"      
+       android:layout_centerInParent="true"
+       android:visibility="gone"
+       android:gravity="center"
+       android:text="赞"
+       android:textSize="18dip"
+       android:textColor="#000000"
+        />
+
+	<Button 
+    android:id="@+id/bt_two"
+    android:layout_width="80dip"
+    android:layout_height="80dip"
+    android:layout_below="@id/ratingBar1"
+    android:layout_alignParentRight="true"
+    android:background="@drawable/cai"
+    android:layout_centerInParent="true"
+    android:textColor="#000000"/>
+	
+	<TextView
+	    android:id="@+id/vod_down"
+	    android:layout_width="120dip"
+        android:layout_height="80dip"    
+        android:layout_toLeftOf="@+id/bt_two"
+        android:layout_alignTop="@id/bt_two"
+        android:textColor="#000000"
+        />
+	
+	
+	<TextView
+       android:id="@+id/tv_two"
+       android:layout_width="20dip"
+       android:layout_height="20dip"          
+       android:text="踩"
+       android:layout_centerInParent="true"
+       android:visibility="gone"
+       android:gravity="center"
+       android:textSize="18dip"
+       android:textColor="#000000"
+        />
+</RelativeLayout>
+
+</LinearLayout>

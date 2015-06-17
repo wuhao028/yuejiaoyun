@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yuejiaoyun"
+     android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	 <!--以下为必须的权限 -->
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="getui.permission.GetuiService" />
+<uses-permission android:name="android.permission.GET_TASKS" />
+
+
+<!--可选权限 -->
+<uses-permission android:name="android.permission.CALL_PHONE" />
+
+<!--自定义权限-->
+<permission
+	android:name="getui.permission.GetuiService"
+	android:protectionLevel="normal" >
+</permission>
+	 
+	 
+	 
+	 
+	 
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/welcome_background"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+          <activity
+            android:name="com.example.guide.SplashActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.activity.WelcomeActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity 
+            android:name="com.example.activity.MainActivity"
+            android:label="@string/main_activity">
+            
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable"/>
+        </activity>
+        
+        
+          <meta-data
+            	android:name="PUSH_APPKEY"
+            	android:value="b91jOwgYJB8GxmpbXTARE3" />
+        	<meta-data
+            	android:name="PUSH_APPID"
+            	android:value="dM4axxsRH99e5drdWeugz3" />
+        	<meta-data
+           		android:name="PUSH_APPSECRET"
+            	android:value="clxD2EUnsQ9J3HxXKDxmk5" />
+        	<meta-data
+            	android:name="PUSH_GROUPID"
+            	android:value="" />
+		
+		
+           <service
+            	android:name="com.igexin.sdk.PushService"
+            	android:exported="true"
+            	android:label="NotificationCenter"
+            	android:process=":pushservice" >
+        	</service>
+
+        	<receiver android:name="com.igexin.sdk.PushReceiver" >
+           		<intent-filter>
+                		<action android:name="android.intent.action.BOOT_COMPLETED" />
+                		<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                		<action android:name="android.intent.action.USER_PRESENT" />
+                		<action android:name="com.igexin.sdk.action.refreshls" />
+            	</intent-filter>
+        	</receiver>
+        	<receiver android:name="com.igexin.sdk.PushReceiver"
+            	android:exported="false" >
+            	<intent-filter>
+                		<action android:name="com.igexin.sdk.action.pushmanager" />
+            	</intent-filter>
+        	</receiver>
+		<activity
+            	android:name="com.igexin.sdk.PushActivity"
+            	android:excludeFromRecents="true"
+            	android:exported="false"
+            	android:process=":pushservice"
+            	android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            	android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        	</activity>
+
+<!-- 配置弹框activity -->
+<activity android:name="com.igexin.getuiext.activity.GetuiExtActivity"  
+        		android:configChanges="orientation|keyboard|keyboardHidden"
+            	android:excludeFromRecents="true"
+            	android:process=":pushservice"
+            	android:taskAffinity="android.task.myServicetask"
+            	android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            	android:exported="false" />		
+
+<receiver android:name="com.igexin.getuiext.service.PayloadReceiver" android:exported="false" >
+			<intent-filter>
+				<!-- 这个com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4固定，不能修改  -->
+				<action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+				<!-- android:name="com.igexin.sdk.action.第三方的appId" -->			
+				<action android:name="com.igexin.sdk.action.dM4axxsRH99e5drdWeugz3" />
+			</intent-filter>
+		</receiver>
+
+<service android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+		
+		<!-- 个推download模块配置-->
+		<service android:name="com.igexin.download.DownloadService"
+			android:process=":pushservice" />
+		<receiver
+			android:exported="false" android:name="com.igexin.download.DownloadReceiver"> 
+			<intent-filter>
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+			</intent-filter>
+		</receiver>
+		<provider 
+			android:name="com.igexin.download.DownloadProvider"
+		    	android:process=":pushservice" 
+			android:authorities="downloads.com.example.yuejiaoyun"	/>
+			<!-- android:authorities="downloads.第三方包名" -->
+<!-- =========================================================================== -->
+        
+        
+        
+        
+        <service 
+            android:name="com.example.service.LoadPpListService">
+            <intent-filter>
+                <action android:name="com.example.service.LOAD_PPLIST"/>
+            </intent-filter>
+        </service>
+        <activity 
+            android:name="com.example.activity.ShowVodsInSelectedPpList"
+            android:label="@string/ShowVodsInSelectedPpList"></activity>
+        <activity 
+            android:name="com.example.activity.VideoPlayActivity"
+            android:label="播放"></activity>
+        <!-- Don't forgot InitActivity -->
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        
+        <activity 
+            android:name="com.example.activity.SearchableActivity"
+            android:label="搜索"
+            android:launchMode="singleTop"><!-- 单例置顶模式  显示该activity时，只允许存在单例，且activity栈内在其上的统统干掉 -->
+            <intent-filter>
+            	<action android:name="android.intent.action.SEARCH" />
+       		</intent-filter>
+       		<!--Specify the searchable configuration to use, in a <meta-data> element.
+       			为searchView指定了配置文件，name和resource 必须是这个value  -->
+       		<meta-data android:name="android.app.searchable"
+                   android:resource="@xml/searchable"/>
+        </activity>
+        
+        <!-- Points to searchable activity so the whole app can invoke search. -->
+        <meta-data android:name="android.app.default_searchable"
+                   android:value="com.example.activity.SearchableActivity" />
+        
+        <!-- 声明 SearchView会用到的 “最近请求建议”的ContentProvider, 
+        	android:authorities属性要与该类中定义的authorities相同-->
+      
+          <provider 
+            android:name="com.example.contentprovider.RecentSuggestionsProvider"
+            android:authorities="com.example.contentprovider.RecentSuggestionsProvider">
+        </provider>
+        <provider 
+            android:name="com.example.contentprovider.CustomSuggestionsProvider"
+            android:authorities="com.example.contentprovider.CustomSuggestionsProvider">
+        </provider>
+        
+        <!-- 注意：在Android manifest文件中，不需要对android:searchSuggestIntentAction属性或SUGGEST_COLUMN_INTENT_ACTION列设定的intent action(即ACTION_VIEW)添加intent 过滤器。
+        	系统将根据名称启动搜索activity并传递建议项的intent，因此activity不需要对可接受的action进行声明。
+        	参照：http://www.cnblogs.com/over140/archive/2012/01/06/2314114.html -->
+        	
+        <activity 
+            android:name="com.example.activity.PlayHistoryActivity"
+            android:label="历史记录">
+        </activity>
+        
+                    
+            <activity android:name="com.example.activity.search"
+                      android:label="搜索"/>
+            
+            <activity android:name=".KeywordsView"
+                      android:label="关键字"/>
+            
+            <activity android:name="com.example.activity.getsearchresult"
+                      android:label="搜索"/>
+            
+              <activity android:name="com.example.activity.RefreshableView"
+                      android:label="刷新"/>
+              
+              <activity android:name="com.example.yuejiaoyun.xml.VideoListContentHandle"
+                      android:label="yujiaoyun"/>
+              
+              <activity android:name="com.example.activity.VideoPlayer"
+                      android:label="播放"/>
+         <activity android:name="com.example.activity.webpageloader"
+                      android:label="在线考试"/>
+         
+            <activity android:name="com.example.activity.SettingActivity"
+                      android:label="设置"/>
+      
+         <activity
+            android:name="com.example.guide.GuideActivity"
+            android:configChanges="keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+         
+       <activity android:name="splashadapter.ViewPagerAdapter"
+                 android:label="hehe"/>
+       <activity android:name="voicesearch.MyStt1Activity"
+                 android:label="语音搜索"/>
+  
+       <activity android:name="com.example.activity.PlayLikesActivity"
+                 android:label="我的收藏"/>
+          
+       <activity android:name="com.example.model.PlayLikesItem"
+                 android:label="我的收藏"/>
+       
+       <activity android:name="com.example.utils.PlayLikesItemAdapter"
+                 android:label="我的收藏"/>
+       
+       <activity android:name="setting.setting"
+                 android:label="设置"/>
+      <activity android:name="setting.trafficstats"
+                android:label="流量统计"/>
+       <activity android:name="setting.MonitorService"
+                android:label="流量统计"/>
+         <activity android:name="setting.about"
+                android:label="关于"/>
+       
+        <service 
+            android:name="setting.MonitorService">
+        </service>
+        
+    </application>
+
+   
+        
+</manifest>

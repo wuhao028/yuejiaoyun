@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <TextView
+        android:id="@+id/playtime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        />
+    <!-- vod表结构 vod_id integer primary key,vod_cid,vod_name,vod_sourceid,vod_pic -->
+    <!-- 图片大小的单位dp、sp介绍：http://blog.sina.com.cn/s/blog_6499f8f101014ipq.html -->
+    <ImageView 
+        android:id="@+id/vod_pic"
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_below="@+id/playtime"
+        android:contentDescription="this is vod_pic"/>
+    <TextView 
+        android:id="@+id/vod_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/vod_pic"
+        android:layout_alignTop="@+id/vod_pic"/>
+    <TextView 
+        android:id="@+id/vod_cid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/vod_id"
+        android:layout_marginLeft="30dip"
+        android:layout_alignTop="@+id/vod_pic"/>
+    <TextView 
+        android:id="@+id/vod_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vod_id"
+        android:layout_toRightOf="@+id/vod_pic"/>
+    <TextView 
+        android:id="@+id/vod_sourceid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vod_name"
+        android:layout_toRightOf="@+id/vod_pic"/>
+	<!-- 2014-4-21 接口扩展 新增3项 -->
+	<TextView 
+        android:id="@+id/vod_addtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vod_sourceid"
+        android:layout_toRightOf="@+id/vod_pic"/>
+    <TextView 
+        android:id="@+id/vod_hits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vod_addtime"
+        android:layout_toRightOf="@+id/vod_pic"/>
+    <ImageView 
+        android:id="@+id/play_vod_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/vod_pic"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/play_vod_img"
+        android:contentDescription="播放按钮"/>    
+    
+    
+    <TextView 
+        android:id="@+id/vod_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vod_pic"/>
+</RelativeLayout>

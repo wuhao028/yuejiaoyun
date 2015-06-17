@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:src="@drawable/welcome_background" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:textSize="15dip"
+        android:inputType="textMultiLine"
+        android:text="“粤教云”工程致力于建设自主、可控、安全、绿色教育云，构建云、端结合的应用模式，创新教育信息化建设模式、服务模式和发展模式。“粤教云”由“云”、“端”、“内容”、“应用”、“运行”五大组成部分。" />
+
+    <TextView
+        android:id="@+id/editText3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:textSize="10dip"
+        android:textColor="#8F8F8F"
+        android:gravity="center_vertical"
+        android:text="                      北京大学信息工程学院 粤教云重点实验室 
+                                 All Rights Reserved" >
+                            
+
+        <requestFocus />
+    </TextView>
+
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText2"
+        android:autoLink="email"
+        android:ems="10"
+        android:textSize="15dip"
+        android:text="                建议和反馈：wuhao028@pku.edu.cn" />
+    
+</RelativeLayout>
